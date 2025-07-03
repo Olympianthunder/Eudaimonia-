@@ -7,3 +7,4 @@ nav:
   - Quickstart: quickstart.md
   - Modes: modes.md
   - Guardian Rules: guardian_rules.md
+  - Memory Store: memory_store.md
