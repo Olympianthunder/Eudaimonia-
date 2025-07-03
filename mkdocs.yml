@@ -8,3 +8,4 @@ nav:
   - Modes: modes.md
   - Guardian Rules: guardian_rules.md
   - Memory Store: memory_store.md
+  - API: api.md
