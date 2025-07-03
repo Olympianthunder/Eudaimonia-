@@ -5,11 +5,15 @@ class ModeManager:
         self.current_mode = None
 
     def evaluate_modes(self, context):
+        """Evaluate which mode should be active based on the given context."""
+        triggered = False
         for mode in self.modes.values():
             if mode.should_trigger(context):
                 self.try_switch_to_mode(mode.name)
+                triggered = True
                 break
-        if self.current_mode is None:
+
+        if not triggered:
             self.try_switch_to_mode(self.default_mode.name)
 
     def try_switch_to_mode(self, mode_name):
