@@ -24,3 +24,4 @@ For full documentation visit the project site.
 
 - [Guardian Rules](docs/guardian_rules.md) - customize when Guardian mode activates.
 - Memory store - TinyDB-based event log for agents and modes.
+- API bridge - interact with the assistant over HTTP.

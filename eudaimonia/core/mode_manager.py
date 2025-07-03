@@ -25,5 +25,9 @@ class ModeManager:
         self.current_mode.on_activate({})
         return True
 
+    def switch_mode(self, mode_name):
+        """Public helper to switch modes programmatically."""
+        return self.try_switch_to_mode(mode_name)
+
     def fallback_mode(self):
         self.try_switch_to_mode(self.default_mode.name)
