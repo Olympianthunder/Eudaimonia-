@@ -1,12 +1,14 @@
 from ..core.tts import speak
 from ..core.base_mode import BaseMode
+from ..core.rule_engine import should_trigger_guardian
 
 class GuardianMode(BaseMode):
     name = "guardian_mode"
     tone = "protective"
 
     def should_trigger(self, context):
-        return context.get("is_family_context", False)
+        text = context.get("last_user_message", "")
+        return should_trigger_guardian(text, context)
 
     def process_request(self, request, context):
         response = (

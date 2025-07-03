@@ -1,0 +1,11 @@
+- id: distress_keywords
+  when_text_contains: ["help", "emergency", "intruder"]
+  action: trigger_guardian
+
+- id: night_watch
+  time_between: ["23:00", "05:00"]
+  action: trigger_guardian
+
+- id: family_only
+  context_requires: ["is_family_context"]
+  action: trigger_guardian

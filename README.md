@@ -19,3 +19,7 @@ python -m eudaimonia.main
 ```
 
 For full documentation visit the project site.
+
+## Features
+
+- [Guardian Rules](docs/guardian_rules.md) - customize when Guardian mode activates.
