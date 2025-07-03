@@ -1,5 +1,5 @@
-import os
-from core.base_mode import BaseMode
+from eudaimonia.core.tts import speak
+from eudaimonia.core.base_mode import BaseMode
 
 class TacticalMode(BaseMode):
     name = "tactical_mode"
@@ -10,5 +10,5 @@ class TacticalMode(BaseMode):
 
     def process_request(self, request, context):
         response = f"[TacticalMode - crisp, assertive, slightly faster delivery] Directive received: {request}. Executing with precision."
-        os.system(f'say \"{response}\"')
+        speak(response)
         return response

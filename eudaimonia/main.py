@@ -1,4 +1,4 @@
-from core.eudaimonia import Eudaimonia
+from eudaimonia.core.eudaimonia import Eudaimonia
 
 if __name__ == "__main__":
     assistant = Eudaimonia()
