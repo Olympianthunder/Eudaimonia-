@@ -1,30 +1,21 @@
-# Eudaimonia-
-Modular AI assistant with voice-aware behavior, dynamic mode switching, and Bahamian cultural tone. Built for real-world interaction, tactical decision-making, and emotional context.
+# Eudaimonia MCP
 
-## Requirements
+[![CI](https://github.com/OWNER/Eudaimonia-/actions/workflows/tests.yml/badge.svg)](https://github.com/OWNER/Eudaimonia-/actions/workflows/tests.yml)
+[![Docs](https://github.com/OWNER/Eudaimonia-/actions/workflows/docs.yml/badge.svg)](https://OWNER.github.io/Eudaimonia-/)
+[![TestPyPI](https://github.com/OWNER/Eudaimonia-/actions/workflows/release.yml/badge.svg)](https://test.pypi.org/project/eudaimonia-mcp/)
 
-The project relies solely on the Python standard library. Ensure Python 3.8 or newer is available. To run the test suite you will also need `pytest` installed:
+Eudaimonia MCP is a modular AI assistant with voice-aware behavior and dynamic mode switching, inspired by Bahamian culture.
+
+## Installation
 
 ```bash
-pip install pytest
+pip install eudaimonia-mcp
 ```
 
-## Running the assistant
-
-Use the module entry point located in `eudaimonia/main.py`:
+## Usage
 
 ```bash
 python -m eudaimonia.main
 ```
 
-This script initializes the assistant and processes several sample requests so you can confirm that everything is working.
-
-## Running the tests
-
-After the path fix, the test runner works without additional configuration. Execute:
-
-```bash
-pytest -q
-```
-
-At the moment no formal test cases are included so the command may report that zero tests were collected, but it should run successfully.
+For full documentation visit the project site.

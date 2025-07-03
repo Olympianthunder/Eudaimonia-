@@ -1,0 +1,8 @@
+site_name: Eudaimonia MCP
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Modes: modes.md
