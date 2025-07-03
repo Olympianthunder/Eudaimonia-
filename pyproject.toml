@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eudaimonia-mcp"
+version = "0.1.0"
+description = "Modular AI assistant with dynamic modes and Bahamian cultural tone."
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{name = "Eudaimonia Team"}]
+license = {text = "MIT"}
+
+[project.urls]
+Homepage = "https://github.com/OWNER/Eudaimonia-"
+Documentation = "https://OWNER.github.io/Eudaimonia-/"
+
+[project.optional-dependencies]
+docs = ["mkdocs-material"]
