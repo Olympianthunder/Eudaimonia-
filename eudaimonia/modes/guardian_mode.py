@@ -1,5 +1,5 @@
-import os
-from core.base_mode import BaseMode
+from eudaimonia.core.tts import speak
+from eudaimonia.core.base_mode import BaseMode
 
 class GuardianMode(BaseMode):
     name = "guardian_mode"
@@ -10,5 +10,5 @@ class GuardianMode(BaseMode):
 
     def process_request(self, request, context):
         response = f"[GuardianMode - reassuring, protective, slower tempo] Everything alright? I’m watching over things — {request} handled."
-        os.system(f'say "{response}"')
+        speak(response)
         return response
