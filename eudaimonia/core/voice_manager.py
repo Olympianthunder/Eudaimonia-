@@ -1,7 +1,9 @@
 import json
 import os
 
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), '../config/voice_profiles.json')
+CONFIG_PATH = os.path.join(
+    os.path.dirname(__file__), "..", "config", "voice_profiles.json"
+)
 
 with open(CONFIG_PATH, 'r') as f:
     voice_profiles = json.load(f)

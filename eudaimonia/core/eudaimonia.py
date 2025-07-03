@@ -1,8 +1,8 @@
-from core.mode_manager import ModeManager
-from modes.default_mode import DefaultMode
-from modes.guardian_mode import GuardianMode
-from modes.tactical_mode import TacticalMode
-from modes.empathy_mode import EmpathyMode
+from .mode_manager import ModeManager
+from ..modes.default_mode import DefaultMode
+from ..modes.guardian_mode import GuardianMode
+from ..modes.tactical_mode import TacticalMode
+from ..modes.empathy_mode import EmpathyMode
 
 class Eudaimonia:
     def __init__(self):
