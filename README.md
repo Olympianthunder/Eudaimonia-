@@ -23,3 +23,4 @@ For full documentation visit the project site.
 ## Features
 
 - [Guardian Rules](docs/guardian_rules.md) - customize when Guardian mode activates.
+- Memory store - TinyDB-based event log for agents and modes.

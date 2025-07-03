@@ -11,6 +11,10 @@ requires-python = ">=3.8"
 authors = [{name = "Eudaimonia Team"}]
 license = {text = "MIT"}
 
+dependencies = [
+    "tinydb"
+]
+
 [project.urls]
 Homepage = "https://github.com/OWNER/Eudaimonia-"
 Documentation = "https://OWNER.github.io/Eudaimonia-/"
