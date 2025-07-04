@@ -1,0 +1,9 @@
+name: "CodeQL"
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  analyze:
+    name: Analyze (CodeQL)
+    uses: github/codeql-action/analyze@v3
