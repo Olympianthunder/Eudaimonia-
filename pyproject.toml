@@ -12,7 +12,13 @@ authors = [{name = "Eudaimonia Team"}]
 license = {text = "MIT"}
 
 dependencies = [
-    "tinydb"
+    "fastapi",
+    "tinydb",
+    "PyYAML",
+    "httpx",
+    "opentelemetry-api",
+    "opentelemetry-sdk",
+    "langfuse"
 ]
 
 [project.urls]
