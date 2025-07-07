@@ -1,6 +1,7 @@
 from ..core.tts import speak
 from ..core.base_mode import BaseMode
 
+
 class EmpathyMode(BaseMode):
     name = "empathy_mode"
     tone = "supportive"

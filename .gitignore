@@ -3,6 +3,8 @@ __pycache__/
 .DS_Store
 *.json
 !memory.json
+.coverage
+node_modules/
 .secrets.baseline
 /dist/
 /build/

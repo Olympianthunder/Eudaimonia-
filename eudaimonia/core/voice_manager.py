@@ -5,8 +5,9 @@ CONFIG_PATH = os.path.join(
     os.path.dirname(__file__), "..", "config", "voice_profiles.json"
 )
 
-with open(CONFIG_PATH, 'r') as f:
+with open(CONFIG_PATH, "r") as f:
     voice_profiles = json.load(f)
+
 
 def get_voice_profile(mode_name):
     if mode_name in voice_profiles:

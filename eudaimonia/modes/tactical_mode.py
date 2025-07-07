@@ -1,6 +1,7 @@
 from ..core.tts import speak
 from ..core.base_mode import BaseMode
 
+
 class TacticalMode(BaseMode):
     name = "tactical_mode"
     tone = "straightforward"

@@ -2,6 +2,7 @@ from ..core.tts import speak
 from ..core.base_mode import BaseMode
 from ..core.rule_engine import should_trigger_guardian
 
+
 class GuardianMode(BaseMode):
     name = "guardian_mode"
     tone = "protective"

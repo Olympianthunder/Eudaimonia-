@@ -2,6 +2,7 @@ from ..core.tts import speak
 from ..core.base_mode import BaseMode
 from ..core.storage import get_recent_events
 
+
 class DefaultMode(BaseMode):
     name = "default"
     tone = "bahamian_female_freeport"
@@ -15,8 +16,6 @@ class DefaultMode(BaseMode):
             print("Default mode activated. Speaking in Freeport Bahamian tone.")
 
     def process_request(self, request, context):
-        response = (
-            f"[DefaultMode - Bahamian Voice] I get you, {request}. Let’s handle it, aye."
-        )
+        response = f"[DefaultMode - Bahamian Voice] I get you, {request}. Let’s handle it, aye."
         speak(response)
         return response

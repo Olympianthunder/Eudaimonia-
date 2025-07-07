@@ -7,7 +7,7 @@ if __name__ == "__main__":
         {"is_family_context": True, "request": "Check on the kids."},
         {"user_entered_tactical_command": True, "request": "Run safety protocol."},
         {"emotion_hint": "anxious", "request": "I feel overwhelmed."},
-        {"request": "What's for dinner?"}
+        {"request": "What's for dinner?"},
     ]
 
     for context in test_contexts:

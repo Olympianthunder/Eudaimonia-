@@ -1,5 +1,3 @@
-import pytest
-
 from eudaimonia.core.base_mode import BaseMode
 from eudaimonia.core.mode_manager import ModeManager
 
@@ -57,4 +55,3 @@ def test_switch_back_to_default_on_deactivate():
     assert manager.current_mode is default
     assert dummy.deactivated == 1
     assert default.activated == 2
-

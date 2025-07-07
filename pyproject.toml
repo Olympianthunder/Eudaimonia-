@@ -12,7 +12,8 @@ authors = [{name = "Eudaimonia Team"}]
 license = {text = "MIT"}
 
 dependencies = [
-    "tinydb"
+    "tinydb",
+    "hvac"
 ]
 
 [project.urls]

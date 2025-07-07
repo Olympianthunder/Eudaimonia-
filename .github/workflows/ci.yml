@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install .[docs] fastapi uvicorn pytest httpx jsonschema ruff black pip-audit bandit
+          npm install eslint@latest --save-dev
+      - name: Lint Python
+        run: |
+          ruff check .
+          black . --check
+      - name: Lint JS
+        run: npx eslint . --ext .js,.ts --no-error-on-unmatched-pattern
+      - name: Run tests
+        run: pytest -q
+      - name: Python vuln scan
+        run: |
+          pip install pip-audit
+          pip-audit --fail-on high
+      - name: Node vuln scan
+        working-directory: frontend
+        run: npm audit --audit-level=moderate
+      - name: Bandit security scan
+        run: |
+          pip install bandit
+          bandit -r backend/ -ll

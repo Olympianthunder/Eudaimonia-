@@ -1,0 +1,4 @@
+title = "eudaimonia rules"
+[allowlist]
+  description = "Allow nothing special"
+  regexes = []

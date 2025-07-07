@@ -1,4 +1,3 @@
-import os
 from datetime import datetime
 from pathlib import Path
 from tinydb import TinyDB, Query
@@ -20,7 +19,9 @@ def append_event(event_type: str, data: dict, *, path: str = DEFAULT_PATH) -> No
     db.insert({"type": event_type, "data": data, "ts": datetime.utcnow().isoformat()})
 
 
-def get_recent_events(event_type: str, limit: int = 10, *, path: str = DEFAULT_PATH) -> list:
+def get_recent_events(
+    event_type: str, limit: int = 10, *, path: str = DEFAULT_PATH
+) -> list:
     """Return up to ``limit`` most recent events of ``event_type``."""
     db = _get_db(path)
     q = Query()

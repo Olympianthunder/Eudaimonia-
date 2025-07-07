@@ -1,7 +1,5 @@
 import datetime as dt
 
-import pytest
-
 from eudaimonia.core import rule_engine
 
 
