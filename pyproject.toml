@@ -23,5 +23,5 @@ Documentation = "https://OWNER.github.io/Eudaimonia-/"
 docs = ["mkdocs-material"]
 
 [tool.setuptools.packages.find]
-where = ["."]
-exclude = ["backend*", "tests*"]
+where   = ["."]
+include = ["eudaimonia", "backend"]
