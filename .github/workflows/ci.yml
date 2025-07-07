@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install .[docs] fastapi uvicorn pytest httpx
+      - name: Run tests
+        run: pytest -v
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install python tools
+        run: pip install bandit
+      - name: Bandit scan
+        run: bandit -r . -ll
+      - name: NPM audit
+        run: |
+          if [ -f package.json ]; then
+            npm install
+            npm audit --audit-level=high
+          else
+            echo "No frontend package.json found"
+          fi

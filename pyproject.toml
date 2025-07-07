@@ -21,3 +21,7 @@ Documentation = "https://OWNER.github.io/Eudaimonia-/"
 
 [project.optional-dependencies]
 docs = ["mkdocs-material"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["backend*", "tests*"]

@@ -25,3 +25,13 @@ For full documentation visit the project site.
 - [Guardian Rules](docs/guardian_rules.md) - customize when Guardian mode activates.
 - Memory store - TinyDB-based event log for agents and modes.
 - API bridge - interact with the assistant over HTTP.
+- Automated security scanning with Bandit, npm audit and pre-commit hooks.
+
+## Development
+
+Install the pre-commit hooks to run linters and secret checks automatically:
+
+```bash
+pip install pre-commit
+pre-commit install
+```
