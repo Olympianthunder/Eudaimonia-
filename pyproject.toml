@@ -12,7 +12,13 @@ authors = [{name = "Eudaimonia Team"}]
 license = {text = "MIT"}
 
 dependencies = [
-    "tinydb"
+    "fastapi",
+    "tinydb",
+    "PyYAML",
+    "httpx",
+    "opentelemetry-api",
+    "opentelemetry-sdk",
+    "langfuse"
 ]
 
 [project.urls]
@@ -21,3 +27,6 @@ Documentation = "https://OWNER.github.io/Eudaimonia-/"
 
 [project.optional-dependencies]
 docs = ["mkdocs-material"]
+
+[tool.setuptools.packages.find]
+include = ["eudaimonia", "backend"]
