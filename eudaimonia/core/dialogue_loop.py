@@ -1,33 +1,50 @@
-from __future__ import annotations
-
-from datetime import datetime
-from typing import List, Dict
-
-import numpy as np
-import openai
-
 from .memory_store import MemoryStore
 
-
 class DialogueLoop:
-    """Simple controller for a text dialogue session."""
+    """
+    Manages the sliding window of recent memory entries and drives LLM dialogue.
+    """
 
-    def __init__(self, store: MemoryStore, *, model: str = "text-embedding-ada-002"):
+    def __init__(self, store: MemoryStore, *, ctx_window: int = 16) -> None:
+        """
+        :param store: your MemoryStore instance
+        :param ctx_window: how many recent entries to keep
+        """
         self.store = store
-        self.model = model
-        self.session: List[Dict[str, str]] = []
+        self.ctx_window = ctx_window
 
-    def start_session(self) -> None:
-        self.session = []
+    def get_context(self) -> list[dict]:
+        """
+        Retrieve the latest `ctx_window` memory events as context for the LLM.
+        """
+        return self.store.get_recent_events(limit=self.ctx_window)
 
-    def record_exchange(self, speaker: str, text: str) -> None:
-        self.session.append({"speaker": speaker, "text": text})
+    def add_user_message(self, message: str) -> None:
+        """
+        Log a new user message to memory.
+        """
+        self.store.add_event({"role": "user", "content": message})
 
-    def close_session(self) -> str:
-        session_id = datetime.utcnow().isoformat(timespec="seconds").replace(":", "-")
-        self.store.put(session_id, self.session, fmt="json")
-        joined = " ".join(item["text"] for item in self.session)
-        resp = openai.Embedding.create(input=joined, model=self.model)
-        embedding = resp["data"][0]["embedding"]
-        self.store.put(f"{session_id}_emb", np.array(embedding, dtype=float), fmt="npy")
-        return session_id
+    def add_assistant_message(self, message: str) -> None:
+        """
+        Log a new assistant message to memory.
+        """
+        self.store.add_event({"role": "assistant", "content": message})
+
+    def run(self, user_input: str) -> str:
+        """
+        Full loop: add user message, build context, call LLM, log assistant reply.
+        """
+        self.add_user_message(user_input)
+        context = self.get_context()
+        assistant_reply = self._call_llm(context)
+        self.add_assistant_message(assistant_reply)
+        return assistant_reply
+
+    def _call_llm(self, context: list[dict]) -> str:
+        """
+        Placeholder for your LLM invocation logic.
+        """
+        # e.g. openai.ChatCompletion.create(...)
+        return "LLM response based on context"
+
