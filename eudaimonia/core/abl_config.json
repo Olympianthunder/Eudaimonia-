@@ -1,0 +1,15 @@
+{
+  "form_map": {
+    "OBSERVE":    "Niman – Balanced Watch",
+    "INTERCEPT":  "Soresu – Guard & Wait",
+    "DEFLECT":    "Shien – Redirect Force",
+    "ESCALATE":   "Ataru – Forward Momentum",
+    "TERMINATE":  "Vaapad – Legal Severance"
+  },
+  "keywords": {
+    "CRITICAL":  ["physical threat", "take our child", "i will sue"],
+    "HIGH":      ["manipulation", "coercion", "ultimatum"],
+    "MODERATE":  ["verbal attack", "gaslight", "name-calling"],
+    "LOW":       ["passive-aggressive", "sarcasm"]
+  }
+}

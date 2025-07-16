@@ -6,3 +6,6 @@ __pycache__/
 .secrets.baseline
 /dist/
 /build/
+# allow ABL config
+!eudaimonia/core/abl_config.json
+
