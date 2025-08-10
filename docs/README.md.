@@ -1,0 +1,19 @@
+# Eudaimonia — Architecture Docs (MVE)
+
+This folder holds the architecture-only blueprint. No code runs.
+
+## Contents
+- DESIGN_OVERVIEW.md
+- ROUTING_MATRIX.md
+- MODES_SPEC.md
+- BUDGET_POLICY.md
+- TELEMETRY_SCHEMA.md
+- FORMAT_CI.md
+
+## Defaults
+- Mirror Shield • Socratic 70/30 • Guardian fuse=3 • Trace=ON
+- $3/day • $0.12/call (80% alert, 100% freeze)
+- Remote default: max_tokens=512
+
+## Next
+Open a PR titled “docs: architecture blueprint v1 (no runtime)”.
