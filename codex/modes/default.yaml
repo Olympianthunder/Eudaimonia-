@@ -1,0 +1,28 @@
+version: 0.1
+name: default
+stance: Mirror Shield
+socratic_ratio: "70/30"
+trace: true
+
+routing:
+  tau: 0.70
+  gap_domains:
+    - general_knowledge
+    - news
+    - pop_culture
+    - healthcare
+
+guardian:
+  fuse: 3
+
+presentation:
+  answer_style: socratic_then_concise
+  direct_override: "/JUST-TELL-ME"
+
+cot:
+  steps:
+    - scope_and_gap_check
+    - decompose
+    - reason
+    - present
+    - escalation_hint
