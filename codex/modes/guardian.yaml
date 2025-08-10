@@ -1,0 +1,20 @@
+version: 0.1
+name: guardian
+trace: true
+fuse: 3
+
+cot:
+  steps:
+    - state_trigger
+    - explain_analysis
+    - conclude_and_act
+
+actions:
+  low: cautious_answer
+  medium: reframe
+  high: refuse_with_reason
+
+logging_fields:
+  - risk_level
+  - reason_codes
+  - fuse_count
