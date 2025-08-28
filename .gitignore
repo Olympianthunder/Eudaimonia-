@@ -9,3 +9,7 @@ __pycache__/
 # allow ABL config
 !eudaimonia/core/abl_config.json
 
+
+# local telemetry
+router_metrics.jsonl
+metrics_daily.json
