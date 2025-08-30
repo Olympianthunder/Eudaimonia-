@@ -1,0 +1,2 @@
+{"id":"calc_1","input":"What is 13*17?","expected":"221"}
+{"id":"style_1","input":"Rewrite formally: 'yo prof i cant come'","expected_contains":"cannot attend"}
