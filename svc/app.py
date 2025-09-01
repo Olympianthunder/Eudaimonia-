@@ -7,6 +7,8 @@ except ImportError:
         return f"[stubbed router] {text}"
 
 app = FastAPI()
+from svc.logging_mw import MetricsLogger
+app.add_middleware(MetricsLogger)
 
 class Ask(BaseModel):
     prompt: str
