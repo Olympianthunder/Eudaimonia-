@@ -1,0 +1,23 @@
+name: evals
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install fastapi uvicorn
+      - name: Run golden evals
+        run: python evals/core/run_evals.py > eval_out.jsonl || true
+      - name: Upload eval artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: evals
+          path: eval_out.jsonl
