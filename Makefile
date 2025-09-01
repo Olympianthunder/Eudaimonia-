@@ -18,3 +18,6 @@ docker-build:
 
 docker-run:
 	docker run --rm -p 8080:8080 -e API_TOKEN=dev-secret-123 eudaimonia-api:local
+
+test:
+	$(PY) -m pytest -q
