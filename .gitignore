@@ -1,15 +1,9 @@
+# env & secrets
+.env
+.venv/
 __pycache__/
-*.py[cod]
-.DS_Store
-*.json
-!memory.json
-.secrets.baseline
-/dist/
-/build/
-# allow ABL config
-!eudaimonia/core/abl_config.json
-
-
-# local telemetry
+*.pyc
 router_metrics.jsonl
 metrics_daily.json
+eval_out.jsonl
+.DS_Store
