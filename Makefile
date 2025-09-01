@@ -12,3 +12,6 @@ api:
 
 test:
 	$(PY) -m pytest -q
+
+test:
+	$(PY) -m pytest -q
