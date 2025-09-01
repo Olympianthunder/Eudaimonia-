@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eudaimonia Demo</title>
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;max-width:760px;margin:40px auto;padding:0 16px}
+  .card{border:1px solid #e5e7eb;border-radius:12px;padding:16px;margin:12px 0}
+  input,textarea,button{padding:10px;border-radius:10px;border:1px solid #d1d5db;width:100%}
+  button{cursor:pointer}
+  label{font-weight:600;margin:6px 0;display:block}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .meta{font-size:12px;color:#666}
+</style>
+<div class="card">
+  <h2>Ask the Core API</h2>
+  <div class="row">
+    <div>
+      <label>API Base URL</label>
+      <input id="base" value="http://127.0.0.1:8081" />
+    </div>
+    <div>
+      <label>Bearer Token</label>
+      <input id="token" value="dev-secret-123" />
+    </div>
+  </div>
+  <label>Prompt</label>
+  <textarea id="prompt" rows="3">hello from web</textarea>
+  <button id="go" style="margin-top:10px">Send</button>
+  <div class="meta" id="meta"></div>
+</div>
+<div class="card">
+  <h3>Response</h3>
+  <pre id="out" style="white-space:pre-wrap"></pre>
+</div>
+<script>
+  const $ = id => document.getElementById(id);
+  $("go").onclick = async () => {
+    const base = $("base").value.trim().replace(/\/+$/,'');
+    const token = $("token").value.trim();
+    const prompt = $("prompt").value;
+    $("out").textContent = "…";
+    $("meta").textContent = "";
+    const t0 = performance.now();
+    try{
+      const r = await fetch(base + "/v1/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(token ? {"Authorization": "Bearer " + token} : {})
+        },
+        body: JSON.stringify({ prompt })
+      });
+      const usd = r.headers.get("X-USD");
+      const txt = await r.text();
+      const dt = Math.round(performance.now() - t0);
+      $("out").textContent = txt;
+      $("meta").textContent = `HTTP ${r.status} • latency ${dt} ms` + (usd ? ` • ~$${usd}` : "");
+    }catch(e){
+      $("out").textContent = String(e);
+    }
+  };
+</script>
