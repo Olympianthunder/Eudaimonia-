@@ -4,6 +4,12 @@ metrics:
 	$(PY) scripts/aggregate_daily.py && cat metrics_daily.json
 
 evals:
+
+docker-build:
+	docker build -t eudaimonia-api:local .
+
+docker-run:
+	docker run --rm -p 8080:8080 -e API_TOKEN=dev-secret-123 eudaimonia-api:local
 	$(PY) evals/core/run_evals.py | tee eval_out.jsonl
 
 api:
