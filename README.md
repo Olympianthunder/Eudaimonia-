@@ -1,4 +1,5 @@
 # Eudaimonia MCP
+![ci](https://github.com/Olympianthunder/Eudaimonia-/actions/workflows/ci.yml/badge.svg)
 
 [![CI](https://github.com/OWNER/Eudaimonia-/actions/workflows/tests.yml/badge.svg)](https://github.com/OWNER/Eudaimonia-/actions/workflows/tests.yml)
 [![Docs](https://github.com/OWNER/Eudaimonia-/actions/workflows/docs.yml/badge.svg)](https://OWNER.github.io/Eudaimonia-/)
